@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про нас — Sandora</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-about.css">
+</head>
+<body>
+ 
+    <!-- ШАПКА -->
+<header class="main-header">
+    <div class="container-fluid d-flex align-items-center px-5 h-100">
+        <div class="logo me-auto">
+            <a target="_blank" href="https://products.pepsico.ua/products?FilterProducts%5Bname%5D=&FilterProducts%5Bcategory_id%5D%5B%5D=2&FilterProducts%5Bbrand_id%5D%5B%5D=8&FilterProducts%5Bweight%5D%5B%5D=&FilterProducts%5Bsize%5D%5B%5D=">
+            <img src="images/logo_san.png" width="140" alt="Sandora"></a>
+        </div>
+        
+        <!-- Бургер кнопка -->
+        <button class="burger-btn d-none" id="burgerBtn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <ul class="d-flex align-items-center mb-0 list-unstyled">
+                <li><a href="index.html">головна</a></li>
+                <li><a href="about.html">про нас</a></li>
+                <li><a href="shop.html">магазин</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ВІДЕО -->
+<section class="about-video-section">
+    <video autoplay loop muted playsinline="images/Sandoara_video.mp4">
+        <source src="images/Sandoara_video.mp4" type="video/mp4">
+
+    </video>
+    
+    <div class="video-overlay"></div>
+    
+    <div class="video-text">
+        <h2>Народжена сонцем</h2>
+        <p>Відчуйте енергію найкращих фруктів у кожній краплі</p>
+    </div>
+</section>
+
+<!-- КУПА ІНФОРМАЦІЇ -->
+<main class="container py-5 mt-5">
+    <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-7">
+            <h1 class="hero-title">Історія успіху <span>Sandora</span></h1>
+            <p class="lead mt-4 text-muted">
+                <b>Sandora</b> — символ якості та лідерства на ринку соків України з <b>1995 року</b>. 
+                Сьогодні ми є частиною глобальної родини <b>PepsiCo</b>.
+            </p>
+        </div>
+        <div class="col-lg-5">
+            <div class="row g-3 text-center">
+                <div class="col-6"><div class="fact-box animated-card shadow-sm"><h3>1995</h3><p>заснування</p></div></div>
+                <div class="col-6"><div class="fact-box animated-card shadow-sm"><h3>50+</h3><p>смаків</p></div></div>
+                <div class="col-6"><div class="fact-box animated-card shadow-sm"><h3>22</h3><p>країни</p></div></div>
+                <div class="col-6"><div class="fact-box animated-card shadow-sm"><h3>№1</h3><p>в Україні</p></div></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="mission-section my-5">
+    <div class="mission-container shadow-lg">
+        <div class="row align-items-center">
+            <div class="col-md-2 text-center">
+                <div class="mission-icon">
+                    <i class="bi bi-bullseye"></i>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h2 class="mission-title">Наша місія</h2>
+                <p class="mission-text">
+                    Ми працюємо, щоб дарувати людям здоров’я та задоволення від природи, 
+                    створюючи найкращі соки за світовими стандартами якості. 
+                    <b>Sandora</b> — це турбота про кожну родину в кожній краплі.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="row g-4 mb-5 text-center">
+        <div class="col-md-4">
+            <div class="value-card animated-card shadow-sm">
+                <i class="bi bi-flower1 icon-main"></i>
+                <h5>Природність</h5>
+                <p class="text-muted small">Лише стиглі плоди без штучних консервантів.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="value-card animated-card shadow-sm">
+                <i class="bi bi-patch-check-fill icon-main" style="color: #002654;"></i>
+                <h5>Якість ISO</h5>
+                <p class="text-muted small">Контроль за стандартами ISO 9001:2015.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="value-card animated-card shadow-sm">
+                <i class="bi bi-globe-americas icon-main" style="color: #e65100;"></i>
+                <h5>Глобальність</h5>
+                <p class="text-muted small">Експорт у 22 країни світу.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mb-4 fw-bold section-title">Діяльність у цифрах</h2>
+    <div class="table-responsive shadow-sm rounded mb-5">
+        <table class="table table-hover align-middle border mb-0">
+            <thead class="table-dark">
+                <tr><th>Параметр</th><th>Опис</th><th>Показник</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Заснування</td><td>Миколаївська область, Україна</td><td><span class="badge bg-success">1995 рік</span></td></tr>
+                <tr><td>Асортимент</td><td>Соки, нектари та овочеві суміші</td><td>50+ смаків</td></tr>
+                <tr><td>Технології</td><td>Flash-Pasteurization</td><td><span class="badge bg-primary">Без консервантів</span></td></tr>
+                <tr><td>Частка ринку</td><td>Лідерство на ринку України</td><td>понад 45%</td></tr>
+                <tr><td>Експорт</td><td>Географія поставок</td><td>22 країни</td></tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-icons mb-3 d-flex justify-content-center flex-wrap gap-3">
+            <a href="https://www.instagram.com/sandora.ua/" target="_blank" class="social-sprite instagram" aria-label="Instagram"></a>
+            <a href="https://www.facebook.com/SandoraUkraine" target="_blank" class="social-sprite facebook" aria-label="Facebook"></a>            
+            <a href="https://www.youtube.com/channel/UCaB4kSTgab9wK1wK2vm4Lhw/videos" target="_blank" class="social-sprite youtube" aria-label="YouTube"></a>            
+            <a href="viber://pa?chatURI=sandora&context=sandora_ua_organicWeb" target="_blank" class="social-sprite viber" aria-label="Viber"></a>           
+            <a href="https://telegram.me/sandora_ua_bot?start=sandora_ua_organicWeb" target="_blank" class="social-sprite telegram" aria-label="Telegram"></a>
+        </div>
+        <p class="mb-0 opacity-75">&copy; 2026 Sandora. Всі права захищені.</p>
+    </div>
+</footer>
+</body>
+</html>
