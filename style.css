@@ -1,0 +1,267 @@
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding-top: 70px; font-family: 'Montserrat', sans-serif; background-color: #fafaf8; color: #333; }
+
+
+/* --- ШАПКА (HEADER) --- */
+.main-header {
+    background-color: #002654 !important;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.nav-menu ul li { margin: 0 15px; }
+.nav-menu a {
+    color: rgba(255,255,255,0.7) !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: lowercase;
+    transition: 0.3s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: #ffffff !important; }
+.nav-menu a.active { border-bottom: 2px solid #ffffff; padding-bottom: 5px; }
+
+/* Бургер кнопка */
+.burger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+    display: none;
+}
+.burger-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+/* Анімація в хрестик */
+.burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger-btn.open span:nth-child(2) { opacity: 0; }
+.burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .burger-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 5px !important;
+        z-index: 1100 !important;
+    }
+
+    .burger-btn span {
+        display: block !important;
+        width: 25px !important;
+        height: 2px !important;
+        background-color: #fff !important;
+    }
+
+    .nav-menu {
+        display: block !important;
+        position: fixed !important;
+        top: 70px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #002654 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.3s ease !important;
+        z-index: 1050 !important;
+    }
+
+    .nav-menu.open {
+        max-height: 300px !important;
+    }
+
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px 30px 20px !important;
+    }
+}
+
+
+/*main body start*/
+.background{
+    aspect-ratio: 16/9;
+    background-image: url(../images/Main_pic.png);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative; /* ← це обов'язково! */
+}
+
+.green-button {
+    display: inline-block; /* ← ширина по контенту */
+    background-color: rgb(12, 125, 12);
+    border-radius: 30px;
+    padding: 1.8% 3.5%;
+    text-decoration: none;
+    color: white;
+    outline: none;
+    font-size: clamp(10px, 1.8vw, 25px);
+    font-weight: 500;
+    position: absolute;
+    bottom: 20%;
+    left: 52.7%;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
+.green-button:hover {
+    opacity: 0.9;
+}
+
+/* ДЛЯ ТЕЛЕФОНУ ЦЕНТРАЦІЯ */
+@media (max-width: 768px) {
+    .green-button {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 15%;
+    }
+}
+
+/* ГАЛЕРЕЯ */
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.heading p2 {
+    font-size: clamp(20px, 3vw, 32px);
+    color: #1A3C5E;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.divider {
+    width: 80%;
+    border: 0;
+    border-top: 1.5px solid #002654;
+    margin: 10px auto 0 auto;
+}
+
+.gallery a {
+    display: block;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 .5px .8px #002654;
+    cursor: pointer;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    transition: 0.4s;
+    display: block;
+}
+
+.gallery a:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox-main-img {
+    max-height: 70vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    font-size: 48px;
+    line-height: 1;
+    padding: 0 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+.lightbox-arrow:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.lightbox-arrow.left  { left: 8px; }
+.lightbox-arrow.right { right: 8px; }
+
+#lightbox-thumbs img {
+    width: 60px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    margin: 2px;
+}
+
+#lightbox-thumbs img.active,
+#lightbox-thumbs img:hover {
+    opacity: 1;
+    outline: 2px solid white;
+}
+/*footer start*/
+.main-footer {
+    background-color: #002654;
+    color: white;
+    text-align: center;
+    padding: clamp(16px, 3vw, 30px) 0;
+}
+
+.social-link img {
+    width: clamp(20px, 2.5vw, 28px);
+    height: clamp(20px, 2.5vw, 28px);
+    object-fit: contain;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.social-link:hover img {
+    opacity: 0.8;
+    transform: scale(1.15);
+}
+
+
+
+.social-sprite {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/social-sprite.png');
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+/* Кожна наступна іконка зміщує фон вліво на 30 пікселів */
+.instagram { background-position: 0 0; }
+.facebook  { background-position: -30px 0; }
+.youtube   { background-position: -60px 0; }
+.viber     { background-position: -90px 0; }
+.telegram  { background-position: -120px 0; }
+.social-sprite:hover {
+    /* Зміщуємо іконку вгору на 8 пікселів (від'ємне значення) */
+    transform: translateY(-8px);
+}

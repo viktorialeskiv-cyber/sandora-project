@@ -1,0 +1,290 @@
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding-top: 70px; font-family: 'Montserrat', sans-serif; background-color: #fafaf8; color: #333; }
+
+/* --- ШАПКА (HEADER) --- */
+.main-header {
+    background-color: #002654 !important;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.nav-menu ul li { margin: 0 15px; }
+.nav-menu a {
+    color: rgba(255,255,255,0.7) !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: lowercase;
+    transition: 0.3s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: #ffffff !important; }
+.nav-menu a.active { border-bottom: 2px solid #ffffff; padding-bottom: 5px; }
+
+/* Бургер кнопка */
+.burger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+.burger-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+/* Анімація в хрестик */
+.burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger-btn.open span:nth-child(2) { opacity: 0; }
+.burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .burger-btn { display: flex !important; }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #002654;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .nav-menu.open {
+        max-height: 300px;
+    }
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px 30px 20px;
+        gap: 5px;
+    }
+    .nav-menu ul li { margin: 8px 0; }
+    .nav-menu a { font-size: 18px; }
+    .nav-menu a.active { border-bottom: none; border-left: 2px solid #fff; padding-bottom: 0; padding-left: 8px; }
+}
+
+
+/* --- КАРТКИ ТА АНІМАЦІЇ --- */
+.animated-card { transition: all 0.3s ease; border: none; }
+.animated-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; }
+
+.hero-title { font-weight: 800; font-size: 3rem; color: #002654; }
+.hero-title span { color: #4c9b2f; }
+
+.fact-box { padding: 25px; background: white; border-radius: 15px; border-bottom: 4px solid #4c9b2f; height: 100%; }
+.fact-box h3 { color: #e65100; font-weight: 800; margin-bottom: 5px; }
+
+.value-card { background: white; border-radius: 20px; padding: 35px 20px; border-bottom: 5px solid #4c9b2f; }
+.icon-main { font-size: 3rem; color: #4c9b2f; margin-bottom: 15px; display: inline-block; }
+
+.section-title { color: #002654; font-size: 1.8rem; }
+
+/* --- ФУТЕР ТА СОЦМЕРЕЖІ (ГАРНИЙ ВАРІАНТ) --- */
+.main-footer { background-color: #002654; padding: 50px 0; color: white; text-align: center; }
+
+.social-link {
+    display: inline-block;
+    margin: 0 12px;
+    transition: transform 0.3s ease;
+}
+
+.social-link img {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain;
+    /* Робимо іконки білими за замовчуванням */
+    filter: brightness(0) invert(1); 
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link:hover img {
+    /* Повертаємо оригінальний колір іконки (Viber - фіолетовий і т.д.) */
+    filter: none; 
+}
+
+
+/* Відео секція */
+.about-video-section {
+    position: relative;
+    width: 100%;
+    height: clamp(200px, 50vw, 500px); /* адаптивна висота */
+    overflow: hidden;
+}
+
+.about-video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+}
+
+.video-text h2 {
+    font-size: clamp(22px, 4vw, 52px);
+    font-weight: bold;
+}
+
+.video-text p {
+    font-size: clamp(13px, 2vw, 22px);
+}
+
+/* Заголовок */
+.hero-title {
+    font-size: clamp(24px, 4vw, 48px);
+}
+
+.hero-title span {
+    color: #e65100;
+}
+
+/* Fact boxes */
+.fact-box {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: clamp(12px, 2vw, 20px);
+}
+
+.fact-box h3 {
+    font-size: clamp(20px, 3vw, 36px);
+    font-weight: bold;
+    color: #1A3C5E;
+    margin-bottom: 4px;
+}
+
+.fact-box p {
+    font-size: clamp(11px, 1.5vw, 15px);
+    color: #666;
+    margin: 0;
+}
+
+/* Місія */
+.mission-container {
+    background: linear-gradient(135deg, #1A3C5E, #2a5f8f);
+    color: white;
+    border-radius: 16px;
+    padding: clamp(20px, 3vw, 40px);
+}
+
+.mission-icon {
+    font-size: clamp(32px, 5vw, 56px);
+    color: rgba(255,255,255,0.85);
+}
+
+.mission-title {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: bold;
+}
+
+.mission-text {
+    font-size: clamp(13px, 1.5vw, 16px);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Value cards */
+.value-card {
+    background: white;
+    border-radius: 12px;
+    padding: clamp(16px, 2.5vw, 28px);
+    height: 100%;
+}
+
+.icon-main {
+    font-size: clamp(28px, 4vw, 44px);
+    color: #2e7d32;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Заголовок секції */
+.section-title {
+    font-size: clamp(18px, 2.5vw, 28px);
+    color: #1A3C5E;
+}
+
+/* Таблиця на мобільному */
+@media (max-width: 576px) {
+    .table thead {
+        display: none; /* ховаємо заголовки */
+    }
+
+    .table tr {
+        display: block;
+        margin-bottom: 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 14px;
+    }
+
+    .table td:last-child {
+        border-bottom: none;
+    }
+
+    .mission-section .col-md-2 {
+        margin-bottom: 12px;
+    }
+}
+.social-sprite {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/social-sprite.png');
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+/* Кожна наступна іконка зміщує фон вліво на 30 пікселів */
+.instagram { background-position: 0 0; }
+.facebook  { background-position: -30px 0; }
+.youtube   { background-position: -60px 0; }
+.viber     { background-position: -90px 0; }
+.telegram  { background-position: -120px 0; }
+.social-sprite:hover {
+    /* Зміщуємо іконку вгору на 8 пікселів (від'ємне значення) */
+    transform: translateY(-8px);
+}
